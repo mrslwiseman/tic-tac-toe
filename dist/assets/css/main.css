@@ -1,0 +1,50 @@
+/*=============================================
+=            Generic styling                  =
+=============================================*/
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 600px;
+  width: 600px;
+}
+.board .cell {
+  border: 1px solid grey;
+}
+
+.x {
+  background-color: red;
+}
+
+.o {
+  background-color: yellow;
+}
+
+.win {
+  background-color: black !important;
+}
