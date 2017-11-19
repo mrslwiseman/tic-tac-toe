@@ -5,19 +5,19 @@ Not an efficient algorithm by any means!
 
 ## To-do:
 ### frontend fancy
-*implement design concept
-*create icons for players
-*convert to react
-*add end of game update message
-*add effect when squares updated
-*add sounds?
+* implement design concept
+* create icons for players
+* convert to react
+* add end of game update message
+* add effect when squares updated
+* add sounds?
 
 ### General
-*general refactor of code
-*split logic from UI
-*remove global variables
-*draws aren't handled
+* general refactor of code
+* split logic from UI
+* remove global variables
+* draws aren't handled
 
 ### AI
-*add varying stages of difficulty
+* add varying stages of difficulty
 
