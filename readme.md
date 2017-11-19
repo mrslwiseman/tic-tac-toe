@@ -4,7 +4,6 @@ Unbeatable, at the most you can draw against it.
 Not an efficient algorithm by any means!
 
 ## To-do:
-
 ### frontend fancy
 *implement design concept
 *create icons for players
