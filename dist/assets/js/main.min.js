@@ -49,7 +49,7 @@ game.makeNewState = function(state, pos){
 // ------------------------------------------------------------------------
 game.makeMove = function(pos, player) {
   //update UI
-
+console.log('making move...')
   //update state
   game.state = game.makeNewState(game.state, pos)
   game.advanceGame();
@@ -201,7 +201,6 @@ function updateBoardUI(pos, player){
 }
 
 function gameOver(winningCombo){
-  console.log(winningCombo);
   winningCombo.forEach(cell => {
     let x = boardCells[cell];
     x.classList.add("win");
@@ -222,9 +221,7 @@ function gameOver(winningCombo){
 
 difficultyBtns.forEach(btn => {
   btn.addEventListener('click', function(e){
-   console.log('game difficulty set to ' + e.target.value)
    game.difficultySetting = e.target.value
-   console.log(game.difficultySetting)
   })
 });
 
@@ -245,6 +242,7 @@ difficultyBtns.forEach(btn => {
      boardCells.forEach(cell => {
        cell.addEventListener('click', function(e) {
          if(!this.classList.contains('x') && !this.classList.contains('o')){
+
            if(game.state.turn == game.player){
              game.makeMove(this.dataset.pos, game.player);
            }

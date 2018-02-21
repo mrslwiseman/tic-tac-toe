@@ -46,7 +46,7 @@ bower_components
 build/Release
 
 # Dependency directories
-node_modules/
+node_modules
 jspm_packages/
 
 # Typescript v1 declaration files
@@ -61,6 +61,9 @@ typings/
 # Optional REPL history
 .node_repl_history
 
+
+# sass cache
+.sass-cache
 # Output of 'npm pack'
 *.tgz
 

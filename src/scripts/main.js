@@ -49,7 +49,7 @@ game.makeNewState = function(state, pos){
 // ------------------------------------------------------------------------
 game.makeMove = function(pos, player) {
   //update UI
-
+console.log('making move...')
   //update state
   game.state = game.makeNewState(game.state, pos)
   game.advanceGame();
