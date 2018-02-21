@@ -12,7 +12,12 @@
 }
 
 html, body {
+  text-align: center;
   margin: 0;
+}
+
+button {
+  padding: 15px 35px;
 }
 
 body {
@@ -23,26 +28,44 @@ body {
 }
 
 .wrapper {
-  max-width: 480px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
 .board {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  height: 600px;
-  width: 600px;
+  height: 400px;
+  width: 400px;
+  background: no-repeat center/cover url(../img/rick-and-morty.jpg);
 }
 .board .cell {
-  border: 1px solid grey;
+  border: 1px solid white;
+  background: transparent;
 }
 
 .x {
-  background-color: red;
+  background: #f9f9f9 url("../img/rick.png") center/75% no-repeat !important;
 }
 
 .o {
-  background-color: yellow;
+  background: #f9f9f9 url("../img/morty.png") center/75% no-repeat !important;
+}
+
+.playerBtn {
+  height: 180px;
+  width: 180px;
+  text-indent: -20000px;
+  border: none;
+  background: transparent;
+}
+
+.rickBtn {
+  background: url("../img/rick.png") center no-repeat !important;
+}
+
+.mortyBtn {
+  background: url("../img/morty.png") center no-repeat !important;
 }
 
 .win {

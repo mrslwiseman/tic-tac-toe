@@ -1,6 +1,7 @@
 /*=============================================
 =            Generic styling                  =
 =============================================*/
+$boardSize: 400px;
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -9,9 +10,14 @@
   box-sizing: border-box; }
 
 html, body {
-
+  text-align: center;
   margin: 0;
 }
+
+button {
+  padding: 15px 35px;
+}
+
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -21,30 +27,48 @@ body {
   overflow-x: hidden; }
 
 .wrapper {
-  max-width: 480px;
+  max-width: $boardSize;
   margin: 0 auto;
 }
 
 .board {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  height:600px;
-  width:600px;
+  height:$boardSize;
+  width:$boardSize;
+  background: no-repeat center/cover url(../img/rick-and-morty.jpg);
   .cell {
-    border:1px solid grey;
+    border:1px solid white;
+    //background: #f9f9f9;
+    background: transparent;
   }
 
 }
 
 
 .x {
-  background-color: red;
+  background: #f9f9f9 url('../img/rick.png') center/75% no-repeat !important;
 }
 
 .o{
-    background-color: yellow;
+  background: #f9f9f9 url('../img/morty.png') center/75% no-repeat !important;
 }
 
+.playerBtn {
+  height:180px;
+  width:180px;
+  text-indent: -20000px;
+    border: none;
+  background: transparent;
+}
+
+.rickBtn {
+  background:  url('../img/rick.png') center no-repeat !important;
+}
+
+.mortyBtn {
+  background:  url('../img/morty.png') center no-repeat !important;
+}
 .win{
   background-color: black !important;
 }

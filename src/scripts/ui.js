@@ -3,7 +3,8 @@ const startBtn = document.querySelector('.startBtn')
 ,     userChoiceXBtn = document.querySelector('.userChoiceX')
 ,     userChoiceOBtn = document.querySelector('.userChoiceO')
 ,     userStartsBtn = document.querySelector('.userStarts')
-,     aiStartsBtn = document.querySelector('.aiStarts');
+,     aiStartsBtn = document.querySelector('.aiStarts')
+,     difficultyBtns = document.querySelectorAll('.difficulty');
 
 
 
@@ -34,6 +35,13 @@ function gameOver(winningCombo){
   })
 });
 
+difficultyBtns.forEach(btn => {
+  btn.addEventListener('click', function(e){
+   console.log('game difficulty set to ' + e.target.value)
+   game.difficultySetting = e.target.value
+   console.log(game.difficultySetting)
+  })
+});
 
 // choose who starts
 // initiate game
@@ -60,10 +68,11 @@ function gameOver(winningCombo){
      });
    }
 
+
+
    // init game state
    game.init(game.playerSymbol, game.playerStarts);
    // clear board
-   resetBoardUI();
 
   })
 });

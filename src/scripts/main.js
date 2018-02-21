@@ -6,11 +6,11 @@ let State = function(oldState) {
 
 // ------------------------------------------------------------------------
 // can this be done with immutable variables? pure functions not updating vars
-let choice;
 
-let game = {
-  this.winningCombo = []
-};
+let game = {};
+game.choice = '';
+game.winningCombo = [];
+game.difficultySetting = 'medium';
 
 // ------------------------------------------------------------------------
 
@@ -70,11 +70,17 @@ game.advanceGame = function() {
 
 // ------------------------------------------------------------------------
 // perform minimax calculations
-// make move with AIs choice
+// make move with AIs game.choice
 
 game.makeAImove = function() {
-  game.minimax(game.state)
-  game.makeMove(choice, game.ai)
+  // make easy move
+  // make intermediate move
+  // make impossible move(minimax)
+
+  game.aiStrategy[game.difficultySetting](game.state)
+
+  //game.minimax(game.state)
+  game.makeMove(game.choice, game.ai)
 };
 
 // ------------------------------------------------------------------------
@@ -138,14 +144,14 @@ game.minimax = function(state) {
     if (state.turn === game.ai) {
       max_score = Math.max.apply(Math, scores);
       max_score_index = scores.indexOf(max_score);
-      choice = moves[max_score_index];
+      game.choice = moves[max_score_index];
 
       return scores[max_score_index];
 
     } else {
       min_score = Math.min.apply(Math, scores);
       min_score_index = scores.indexOf(min_score);
-      choice = moves[min_score_index];
+      game.choice = moves[min_score_index];
 
       return scores[min_score_index];
     }
@@ -163,6 +169,17 @@ game.score = function(state) {
   }
 }
 
-// //  CHOOSE A RANDOM CELL FOR A DUMB ASS AI
-//   let ran = Math.round(Math.random() * (game.state.availableCells.length-1));
-//   let pos = [game.state.availableCells[ran]];
+game.aiStrategy = {
+  easy: function(){
+    let ran = Math.round(Math.random() * (game.state.availableCells.length-1));
+    let pos = game.state.availableCells[ran];
+    game.choice = pos;
+  },
+  medium: function(state){
+    console.log('medium')
+    let ran = Math.round(Math.random() * 1)
+    console.log(ran)
+    ran == 0 ? this.easy() : this.hard(state)
+  },
+  hard: game.minimax
+}
